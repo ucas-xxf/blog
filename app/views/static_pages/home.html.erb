@@ -1,4 +1,8 @@
-<h1>Blog home</h1>
-<p>
-    This is the home page for Blog!
-</p>
+<% provide(:title, "Home") %>
+<div class="center jumbotron">
+    <h1>Blog home</h1>
+    <h2>
+        This is the home page for Blog!
+    </h2>
+    <%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary"%>
+</div>

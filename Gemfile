@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.6'
-
+gem 'bootstrap-sass', '3.3.6'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.3', '>= 6.0.3.4'
 # Use sqlite3 as the database for Active Record
@@ -44,8 +44,12 @@ end
 
 group :test do
   # Adds support for Capybara system testing and selenium driver
+  gem 'rails-controller-testing', '1.0.5'
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
+  gem 'minitest-reporters', '1.1.9'
+  gem 'guard', '2.13.0'
+  gem 'guard-minitest', '2.4.4'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
 end
