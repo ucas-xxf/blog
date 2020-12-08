@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+  config.force_ssl = true
   # Code is not reloaded between requests.
   config.cache_classes = true
 
@@ -109,4 +109,21 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+
+  config.action_mailer.raise_delivery_errors = true
+  ActionMailer::Base.default_charset = "UTF-8"
+
+  #config.action_mailer.perform_caching = true
+  ActionMailer::Base.delivery_method = :smtp
+  ActionMailer::Base.smtp_settings = {
+    address: 'smtp.163.com',
+    port: "25",
+    domain: '163.com'
+    user_name: 'xxf1017761750@163.com'
+    password: 'xiongxinfei123'
+    authentication: plain,
+    enabled_starttls_auto: true
+  } 
+
 end
