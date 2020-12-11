@@ -9,7 +9,21 @@ michael:
 
 xiaolan:
   name: zxl
-  email: zxl@examole.com
+  email: zxl@example.com
+  password_digest: <%= User.digest('password')%>
+  activated: true
+  activated_at: <%= Time.zone.now%> 
+
+archer:
+  name: Archer
+  email: archerl@example.com
+  password_digest: <%= User.digest('password')%>
+  activated: true
+  activated_at: <%= Time.zone.now%>
+  
+azir:
+  name: Azir
+  email: azir@examole.com
   password_digest: <%= User.digest('password')%>
   activated: true
   activated_at: <%= Time.zone.now%> 

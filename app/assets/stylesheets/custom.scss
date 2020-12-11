@@ -4,6 +4,7 @@
 $gray-medium-light: #eaeaea;
 
 body {
+    background-color: lightgreen;;
     padding-top: 60px;
 }
 
@@ -24,6 +25,7 @@ textarea {
 
 
 h1, h2, h3, h4, h5, h6{
+    font-family: "Micropost Yahei";
     line-height: 1;
 }
 
@@ -70,9 +72,9 @@ footer {
     border-top: 1px solid #eaeaea;
     color: #777;
     a {
-        color: #555;
+        color:black;
         &:hover {
-            color: #222;
+            color:goldenrod;
         }
     }
     small{
@@ -122,6 +124,7 @@ aside {
         }
 
         h1 {
+            font-family: "Micropost Yahei";
             font-size: 1.4em;
             text-align: left;
             letter-spacing: -1px;
@@ -187,6 +190,58 @@ input {
     li {
         overflow: auto;
         padding: 10px 0;
-        border-bottom: 1px solid $gray-lighter;
+        border-bottom: 1px solid black;
     }
 }
+
+.microposts {
+    list-style: none;
+    padding: 0;
+    float: inline-start;
+    li {
+        padding: 5px 0;
+        border-top: 1px solid #e8e8e8;
+    }
+    .user {
+        margin-top: 5em;
+        padding-top: 0;
+    }
+    .content {
+        display: block;
+        margin-left: 60px;
+        img {
+            display: block;
+            padding: 5px 0;
+        }
+    }
+    .timestamp {
+        color: $gray-light;
+        display: block;
+        margin-left: 60px;
+    }
+    .gravatar {
+        margin-right: 10px;
+        margin-top: 5px;
+    }
+}
+
+aside {
+    textarea {
+        height: 100px;
+        margin-bottom: 5px;
+    }
+}
+
+span.picture {
+    margin-top: 10px;
+    input {
+        border: 0;
+    }
+}
+
+.paginate {
+    float: inline-end;
+    padding: 10px 0;
+}
+
+

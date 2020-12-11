@@ -5,9 +5,9 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
   #   assert true
   # end
 
-  def setup
-    ActionMailer::Base.deliveries.clear
-  end
+  # def setup
+  #   ActionMailer::Base.deliveries.clear
+  # end
 
   # test "valid signup information with account activation" do
   #   get signup_path
@@ -56,7 +56,7 @@ class UsersSignupTest < ActionDispatch::IntegrationTest
                                        password_confirmation: "password"}}
     end
     follow_redirect!
-    #assert_template 'users/show'
-    #assert is_logged_in?
+    assert_template 'users/show'
+    assert is_logged_in?
   end
 end
