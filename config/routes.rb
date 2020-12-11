@@ -10,8 +10,14 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   delete '/logout', to: 'sessions#destroy'
   get '/microposts/:id', to: 'microposts#destroy'
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :users
   resources :account_activations, only: [:edit]
   resources :microposts, only: [:create, :destroy]
+  resources :relationships, only: [:create, :destroy]
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
