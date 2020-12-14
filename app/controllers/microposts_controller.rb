@@ -5,17 +5,17 @@ class MicropostsController < ApplicationController
     def create
         @micropost = current_user.microposts.build(micropost_params)
         if @micropost.save
-            flash[:success] = "Micropost created!"
+            flash[:success] = "发布微博成功！"
             redirect_to root_url
         else
-            
+            @feed_items = current_user.feed.paginate(page: params[:page])
             render 'static_pages/home'
         end
     end
 
     def destroy
         @micropost.destroy
-        flash[:success] = "Micropost deleted!"
+        flash[:success] = "删除微博成功！"
         redirect_to request.referrer || root_url
     end
     
@@ -23,7 +23,7 @@ class MicropostsController < ApplicationController
     private
 
         def micropost_params
-            params.require(:micropost).permit(:content)
+            params.require(:micropost).permit(:content, :picture)
         end
 
         def correct_user
